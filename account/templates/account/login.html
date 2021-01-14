@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	  <form  method="post" enctype="multipart/form-data">
+	    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+	    {% csrf_token %}
+	    {{form.as_p}}<P><a href="{% url 'account_app:password-reset' %}">Forgot Password</a></P>
+	    <div class="checkbox mb-3">
+	      <label>
+	      	
+	        <input type="checkbox" value="remember-me"> Remember me
+	      </label>
+	    </div>
+	    <button class=" btn btn-lg btn-primary" type="submit">Sign in</button>
+	    <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+	  </form>
+	
+
+{% endblock %}
